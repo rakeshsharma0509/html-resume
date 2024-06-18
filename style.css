@@ -1,0 +1,269 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color:#ff7613;
+    --text-color: #727171;
+}
+html{
+    font-size: 10px;   /*base font*/
+}
+body{
+    font-family: Inter, sans-serif;
+    background-color: black;
+    color: white;     /* body default font color*/
+}
+
+/* common styles */
+
+img{
+    width: 100%; 
+    /* relative to parent */
+}
+
+a{
+    text-decoration: none;
+    color:white;
+}
+
+
+.description{
+margin-top: 1rem;
+font-size: 1.5rem;
+font-weight: 400;
+color:var(--text-color);
+}
+
+.title{
+    color:var(--primary-color);
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.item_preTitle{
+    font-size: 1.4rem;
+    color:var(--text-color);
+    font-weight: 300;
+}
+
+.item_title{
+    font-size:1.6rem;
+    color:white;
+    font-weight: 500;
+    margin:0.8rem 0;
+}
+
+.item_subTitle{
+    font-size: 1.4rem;
+    color: var(--text-color);
+    font-weight:400;
+}
+
+/* layouts */
+
+.container{
+    max-width: 1000px;
+    width:90%;
+    margin: 0 auto;    /*the auto makes the left and right margin in middle  */
+    display: grid;
+    grid-template-columns: 1fr 1fr;/* grid makes row and column and here it makes 2 column of 1 fraction each of available space*/
+    gap: 4rem;/* column gap */
+    padding: 5rem;
+    background: #070707; 
+}
+
+@media only screen and (max-width: 768px){
+    .container{
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 3rem;
+        gap:7rem;
+    }
+
+    .profile{
+        margin-bottom:0;
+    }
+
+    .profile_container{
+        flex-direction: column;
+        /* for small devices changes the flex direction*/
+    }
+
+    hr{
+        margin:0 auto;
+    }
+    .group-3{
+        flex-direction: column; 
+    }
+
+    
+}
+
+.profile{
+    grid-column:1/-1;
+    margin-bottom: 2rem;
+}
+.group-1,.group-2{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+/* direction is column bcs it will make expertise and refernce in one column */
+}
+
+ .group-3{
+    max-width: 700px;
+    width: 100%;
+    grid-column: 1/3;
+    /* margin: 0 auto; */
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 5rem;
+
+}
+
+.group-3>div{
+    flex:1;
+}
+
+
+/* profile */
+.profile_container{
+    display: flex;
+    gap: 2rem;
+}
+
+.profile_profileImg{
+    max-width: 250px;
+} 
+
+.first_name{
+     color: white;
+     font-weight: 200;
+     font-size: clamp(2rem, 8vw, 4rem);
+     /* clamp functions set the min size and max size and actual size we want
+    it changes according to the size of the screen acc to min and max value */
+     text-transform: uppercase;
+      display: block;       /*it will take the whole space and last name will came below */ 
+      margin-bottom: -0.8rem;  /* -neg value makes it closer  */ 
+     
+    }
+
+.last_name{
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: clamp(2.5rem, 15vw, 7rem);
+    text-transform: uppercase;
+    display: block;
+}
+
+.profile_title{
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+/* Expertise */
+.skill_set{
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+    line-height: 2;
+}
+
+/* references */
+.ref_item{
+    margin-top: 2rem;
+}
+.ref_name{
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+/* education */
+.edu_item{
+    margin-top: 2rem;
+}
+
+/* certification */
+.certi_item{
+    margin-top: 2rem;
+}
+
+/* experience */
+.exp_item{
+    margin-top: 2rem; 
+}
+
+/* awards */
+.awards_item{
+    margin-top: 2rem;
+}
+/* interests */
+.interest_items{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.interest_item{
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    color:var(--text-color)
+}
+
+.interest_item svg{
+    width: 2.5rem;
+}
+
+/* socials */
+.social{
+    margin-left: 25%;
+}
+.social_item{
+    margin-top: 2rem;
+}
+
+.social_items{
+    margin-top: 1.5rem; 
+    font-size: 1.5rem;
+    display: flex;
+    gap:0.5rem;
+    align-items: center;
+    justify-content: flex-start;  /* to start from left align */
+    color: var(--text-color);
+}
+
+.social_items:hover{
+    color: var(--primary-color);
+}
+
+.social_items svg{
+    width: 2rem;
+}
+
+
+/* hr  */
+hr{
+    grid-column: 1/-1;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    border: none;
+    border-top: 2px solid rgba(128,128,128,0.229);
+
+}
+
+
+
+    
